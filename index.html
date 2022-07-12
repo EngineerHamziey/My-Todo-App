@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EngineerHamziey Todo App</title>
+  <link rel="stylesheet" href="./others/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>EngineerHamziey's Todo App</h1>
+  </header>
+  <main>
+    <form>
+      <!-- added input box so that I can give
+        it positon relative, and visually place the button inside the input  -->
+      <div class="input-box">
+        <input type="text" name="input-box">
+        <button class="save-button">
+          Save
+          <!-- <i class="save-icon"></i> -->
+        </button>
+      </div>
+      <div class="select-wrap">
+        <!-- I used this select wrap so that I can visually place my new icon in it -->
+        <select name="todo-filter" class="filter-select">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="uncompleted">Uncompleted</option>
+        </select>
+      </div>
+    </form>
+    <div class="todo-list-container">
+      <ul class="todo-list"></ul>
+    </div>
+  </main>
+</body>
+
+</html>

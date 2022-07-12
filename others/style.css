@@ -1,0 +1,152 @@
+:root {
+  --dark-background: #222;
+  --text-white:#9a9a9a; 
+  --internal-text-color: #555;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  background: var(--dark-background);
+  color: var(--text-white);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  margin: 3rem 1rem 4rem 1rem;
+  text-align: center;
+  max-width: 20rem;
+}
+
+main {
+  max-width: 30rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  /* to put input box and the select side by side */
+  display: flex;
+}
+
+.input-box {
+  position: relative;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  color: var(--text-white);
+  padding: 0.3rem;
+  font-size: 1.5rem;
+  border: 0.2rem rgb(189, 187, 179) solid;
+  border-radius: 0.3rem;
+  color: var(--internal-text-color);
+  background: rgb(168, 155, 145);
+  /* this is to prevent default styling of all browsers */
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+input:focus-visible {
+  outline: 0.1rem rgb(245, 198, 12) solid;
+  background: rgb(241, 239, 235);
+}
+
+.save-button {
+  background: rgb(21, 150, 21);
+  color: var(--dark-background);
+  padding: 1rem;
+  font-size: 1.5rem;
+  /* width: 2rem; */
+  height: 90%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* now, to visually Place the button inside the input */
+  position: absolute;
+  right: 0.2rem;/*top 0 is not needed since the container is the same size as the button we are moving*/
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.save-button:hover,
+.save-button:focus-visible {
+  color: rgb(21, 150, 21);
+  background: var(--dark-background);
+  outline: 3px var(--dark-background) dotted;
+}
+
+.save-button:hover {
+  outline-width: 1px;
+}
+
+.select-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.35rem;
+}
+
+select {
+  cursor: pointer;
+  text-align: center;
+  /* this is to prevent default styling of all browsers */
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  height: 100%;
+  /* this border radius is used to correct natural error */
+  border-radius: 0 0.4rem 0.4rem 0;
+  color: var(--dark-background);
+  background: #aaa;
+  border: none;
+  outline: none;
+}
+
+/* when operating the select */
+select:focus-visible {
+  background: rgb(151, 126, 88);
+}
+
+.select-wrap::after {
+  content: "\25BC";
+  background: var(--text-white);
+  color: var(--dark-background);
+  padding: 0.5rem 0.2rem;
+  height: 100%;
+  position: absolute;
+  top: 0rem;
+  right: 0;
+  pointer-events: none;
+}
+
+/* adding hover to the arrow */
+.select-wrap:hover::after {
+  background: #444;
+  color: var(--text-white);
+  font-style: bold;
+}
+
+@media Screen and (min-width: 768px) {
+  header {
+    max-width: 50rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+} 
