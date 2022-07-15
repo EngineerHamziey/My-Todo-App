@@ -17,8 +17,8 @@ body {
   color: var(--text-white);
   min-height: 100vh;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 }
 
 header {
@@ -31,6 +31,7 @@ main {
   max-width: 30rem;
   padding: 1rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -38,9 +39,10 @@ main {
 form {
   /* to put input box and the select side by side */
   display: flex;
+  margin-bottom: 2rem;
 }
 
-.input-box {
+.input-div {
   position: relative;
   margin-right: 1rem;
   display: flex;
@@ -141,8 +143,51 @@ select:focus-visible {
   font-style: bold;
 }
 
+.todo-list {
+  padding: 1rem;
+  list-style: none;
+  font-size: 1.3rem;
+  overflow: hidden;
+}
+
+.todo-items {
+  display: flex;
+  background: var(--text-white);
+  color: var(--dark-background);
+  margin-bottom: 0.5rem;
+}
+
+.todo-text {
+  width: 100%;
+  /* padding: 0.5rem; */
+  /* overflow: hidden; */
+  text-overflow: ellipsis;
+}
+
+.done-btn,
+.delete-btn {
+  /* display: inline-block; */
+  padding: 0.5rem 1rem;
+  background: rgb(129, 9, 9);
+  border: 2px solid rgb(129, 9, 9);
+}
+
+.done-btn {
+  background: rgb(6, 87, 6);
+  border-color: rgb(6, 87, 6);
+}
+
+.done-btn:hover,
+.delete-btn:hover {
+  border-color: var(--dark-background);
+}
+
 @media Screen and (min-width: 768px) {
   header {
+    max-width: 50rem;
+  }
+
+  main {
     max-width: 50rem;
   }
 
