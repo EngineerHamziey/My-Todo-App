@@ -1,6 +1,6 @@
 :root {
   --dark-background: #222;
-  --text-white:#9a9a9a; 
+  --text-white: #9a9a9a; 
   --internal-text-color: #555;
 }
 
@@ -28,7 +28,7 @@ header {
 }
 
 main {
-  max-width: 30rem;
+  /* max-width: 30rem; */
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -47,6 +47,7 @@ form {
   margin-right: 1rem;
   display: flex;
   align-items: center;
+  /* max-width: 30rem; */
 }
 
 input {
@@ -143,6 +144,12 @@ select:focus-visible {
   font-style: bold;
 }
 
+.todo-list-container {
+  overflow: hidden;
+  min-width: 100%;
+  max-width: 30rem;
+}
+
 .todo-list {
   padding: 1rem;
   list-style: none;
@@ -155,12 +162,13 @@ select:focus-visible {
   background: var(--text-white);
   color: var(--dark-background);
   margin-bottom: 0.5rem;
+  transition: all 1s ease;
 }
 
 .todo-text {
   width: 100%;
-  /* padding: 0.5rem; */
-  /* overflow: hidden; */
+  padding: 0.2rem 0.5rem;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -182,12 +190,29 @@ select:focus-visible {
   border-color: var(--dark-background);
 }
 
+
+.delete-it {
+  opacity: 0;
+  transform: 
+    rotateZ(-200deg)
+    /* skew(-200deg) */
+    scale(0);
+  /* display: none; */
+}
+
+.mark-as-done {
+  text-decoration: line-through;
+  color: rgb(58, 43, 5);
+  font-style: italic;
+  opacity: 0.8;
+}
+
 @media Screen and (min-width: 768px) {
   header {
     max-width: 50rem;
   }
 
-  main {
+  .todo-list-container {
     max-width: 50rem;
   }
 
