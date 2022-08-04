@@ -1,8 +1,5 @@
-:root {
-  --dark-background: #222;
-  --text-white: #9a9a9a; 
-  --internal-text-color: #555;
-}
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
 
 * {
   margin: 0;
@@ -11,10 +8,10 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Lato, sans-serif;
   line-height: 1.5;
-  background: var(--dark-background);
-  color: var(--text-white);
+  background-color: #242333;
+  color: #9a9a9a;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,7 +19,7 @@ body {
 }
 
 header {
-  margin: 3rem 1rem 4rem 1rem;
+  margin: 4rem 1rem 4rem 1rem;
   text-align: center;
   max-width: 20rem;
 }
@@ -51,13 +48,13 @@ form {
 }
 
 input {
-  color: var(--text-white);
+  color: #9a9a9a;
   padding: 0.3rem;
   font-size: 1.5rem;
   border: 0.2rem rgb(189, 187, 179) solid;
   border-radius: 0.3rem;
-  color: var(--internal-text-color);
-  background: rgb(168, 155, 145);
+  color: #555;
+  background-color: rgb(168, 155, 145);
   /* this is to prevent default styling of all browsers */
   appearance: none;
   -moz-appearance: none;
@@ -65,13 +62,14 @@ input {
 }
 
 input:focus-visible {
-  outline: 0.1rem rgb(245, 198, 12) solid;
-  background: rgb(241, 239, 235);
+  outline: 0.2rem rgb(97, 80, 14) solid;
+  /* outline-color: red; */
+  background-color: rgb(241, 239, 235);
 }
 
 .save-button {
-  background: rgb(21, 150, 21);
-  color: var(--dark-background);
+  background-color: rgb(21, 150, 21);
+  color: #242333;
   padding: 1rem;
   font-size: 1.5rem;
   /* width: 2rem; */
@@ -90,8 +88,8 @@ input:focus-visible {
 .save-button:hover,
 .save-button:focus-visible {
   color: rgb(21, 150, 21);
-  background: var(--dark-background);
-  outline: 3px var(--dark-background) dotted;
+  background-color: #242333;
+  outline: 3px #242333 dotted;
 }
 
 .save-button:hover {
@@ -114,21 +112,22 @@ select {
   height: 100%;
   /* this border radius is used to correct natural error */
   border-radius: 0 0.4rem 0.4rem 0;
-  color: var(--dark-background);
-  background: #aaa;
+  color: #242333;
+  background-color: #aaa;
   border: none;
   outline: none;
 }
 
 /* when operating the select */
 select:focus-visible {
-  background: rgb(151, 126, 88);
+  outline: 2rem rgb(240, 195, 17) solid;
+  background-color: rgb(151, 126, 88);
 }
 
 .select-wrap::after {
   content: "\25BC";
-  background: var(--text-white);
-  color: var(--dark-background);
+  background-color: #9a9a9a;
+  color: #242333;
   padding: 0.5rem 0.2rem;
   height: 100%;
   position: absolute;
@@ -139,8 +138,8 @@ select:focus-visible {
 
 /* adding hover to the arrow */
 .select-wrap:hover::after {
-  background: #444;
-  color: var(--text-white);
+  background-color: #444;
+  color: #9a9a9a;
   font-style: bold;
 }
 
@@ -159,8 +158,8 @@ select:focus-visible {
 
 .todo-items {
   display: flex;
-  background: var(--text-white);
-  color: var(--dark-background);
+  background-color: #9a9a9a;
+  color: #242333;
   margin-bottom: 0.5rem;
   transition: all 1s ease;
 }
@@ -172,22 +171,40 @@ select:focus-visible {
   text-overflow: ellipsis;
 }
 
-.done-btn,
-.delete-btn {
-  /* display: inline-block; */
+.ico {
   padding: 0.5rem 1rem;
-  background: rgb(129, 9, 9);
-  border: 2px solid rgb(129, 9, 9);
+  pointer-events: none;
 }
+
 
 .done-btn {
-  background: rgb(6, 87, 6);
-  border-color: rgb(6, 87, 6);
+  background-color: rgb(35, 126, 35);
+  /* border: solid 0.2rem rgb(35, 126, 35); */
+  border: none;
 }
 
-.done-btn:hover,
+.done-btn:hover {
+  background-color: rgba(35, 126, 35, 0.8);
+}
+
+/* .done-btn:focus-visible{
+  outline: 0.2rem solid rgb(5, 10, 54);
+} */
+
+.delete-btn {
+  background-color: rgb(129, 9, 9);
+  /* border: solid 0.2rem rgb(129, 9, 9); */
+  border: none;
+}
+
 .delete-btn:hover {
-  border-color: var(--dark-background);
+  background-color: rgba(129, 9, 9,0.8);
+}
+
+.done-btn:focus-visible ,
+.delete-btn:focus-visible  {
+  outline: 0.2rem solid rgb(5, 10, 54);
+  opacity: 0.85;
 }
 
 
@@ -195,9 +212,7 @@ select:focus-visible {
   opacity: 0;
   transform: 
     rotateZ(-200deg)
-    /* skew(-200deg) */
     scale(0);
-  /* display: none; */
 }
 
 .mark-as-done {
@@ -205,6 +220,14 @@ select:focus-visible {
   color: rgb(58, 43, 5);
   font-style: italic;
   opacity: 0.8;
+}
+
+footer {
+  margin: 2rem 0.5rem;
+}
+
+footer a {
+  color: unset;
 }
 
 @media Screen and (min-width: 768px) {
