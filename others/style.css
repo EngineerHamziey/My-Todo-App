@@ -21,11 +21,12 @@ body {
 header {
   margin: 4rem 1rem 4rem 1rem;
   text-align: center;
-  max-width: 20rem;
+  max-width: 30rem;
 }
 
 main {
-  /* max-width: 30rem; */
+  padding: 1rem;
+  max-width: 25rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -36,6 +37,9 @@ main {
 form {
   /* to put input box and the select side by side */
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 2rem;
 }
 
@@ -44,21 +48,24 @@ form {
   margin-right: 1rem;
   display: flex;
   align-items: center;
-  /* max-width: 30rem; */
 }
 
 input {
   color: #9a9a9a;
   padding: 0.3rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   border: 0.2rem rgb(189, 187, 179) solid;
   border-radius: 0.3rem;
-  color: #555;
+  color: #333;
   background-color: rgb(168, 155, 145);
   /* this is to prevent default styling of all browsers */
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
+}
+
+input::placeholder {
+  color: #233;
 }
 
 input:focus-visible {
@@ -80,7 +87,7 @@ input:focus-visible {
   align-items: center;
   /* now, to visually Place the button inside the input */
   position: absolute;
-  right: 0.2rem;/*top 0 is not needed since the container is the same size as the button we are moving*/
+  right: 0.2rem;/*top 0 is not needed since the container is the same height as the button we are moving*/
   border-radius: 0.3rem;
   cursor: pointer;
 }
@@ -97,12 +104,15 @@ input:focus-visible {
 }
 
 .select-wrap {
+  margin-top: 1rem;
   position: relative;
   overflow: hidden;
   border-radius: 0.35rem;
+  width: 50%;
 }
 
 select {
+  padding: 0.5rem 0;
   cursor: pointer;
   text-align: center;
   /* this is to prevent default styling of all browsers */
@@ -116,6 +126,7 @@ select {
   background-color: #aaa;
   border: none;
   outline: none;
+  width: 100%;
 }
 
 /* when operating the select */
@@ -131,7 +142,7 @@ select:focus-visible {
   padding: 0.5rem 0.2rem;
   height: 100%;
   position: absolute;
-  top: 0rem;
+  top: 0;
   right: 0;
   pointer-events: none;
 }
@@ -187,13 +198,8 @@ select:focus-visible {
   background-color: rgba(35, 126, 35, 0.8);
 }
 
-/* .done-btn:focus-visible{
-  outline: 0.2rem solid rgb(5, 10, 54);
-} */
-
 .delete-btn {
   background-color: rgb(129, 9, 9);
-  /* border: solid 0.2rem rgb(129, 9, 9); */
   border: none;
 }
 
@@ -230,8 +236,12 @@ footer a {
   color: unset;
 }
 
-@media Screen and (min-width: 768px) {
+@media Screen and (min-width: 500px) {
   header {
+    max-width: 50rem;
+  }
+
+  main {
     max-width: 50rem;
   }
 
@@ -241,5 +251,23 @@ footer a {
 
   h1 {
     font-size: 3rem;
+  }
+
+  form {
+    flex-direction: row;
+    margin-top: 0;
+  }
+
+  input {
+    font-size: 1.5rem;
+    /* width: 100%; */
+  }
+
+  .select-wrap {
+    margin: auto;
+  }
+
+  select {
+    padding: 0.5rem 2rem;
   }
 } 
